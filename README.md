@@ -10,6 +10,6 @@ _SOMOS UN GRUPO DE ENTUSISTAS POR LOS VIDEOJUEGOS Y SU CREACIÓN_
 
 🖥️ _Lucas Damian Fernández_
 
-🖱️ _Marianela Sanhueza
+🖱️ _Marianela Sanhueza_
 
 📞 __
