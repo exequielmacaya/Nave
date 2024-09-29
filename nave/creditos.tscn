@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://q584adasrx7s"]
+
+[ext_resource type="Script" path="res://creditos.gd" id="1_g17jh"]
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_g17jh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

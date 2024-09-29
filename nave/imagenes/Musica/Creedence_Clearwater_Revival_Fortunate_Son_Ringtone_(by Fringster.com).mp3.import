@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4lt7acy35bgn"
+path="res://.godot/imported/Creedence_Clearwater_Revival_Fortunate_Son_Ringtone_(by Fringster.com).mp3-32fae0b4bf56061f86727378bc5e5b3b.mp3str"
+
+[deps]
+
+source_file="res://imagenes/Musica/Creedence_Clearwater_Revival_Fortunate_Son_Ringtone_(by Fringster.com).mp3"
+dest_files=["res://.godot/imported/Creedence_Clearwater_Revival_Fortunate_Son_Ringtone_(by Fringster.com).mp3-32fae0b4bf56061f86727378bc5e5b3b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

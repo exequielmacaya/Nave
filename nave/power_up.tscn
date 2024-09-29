@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://r0g0jx7kldmn"]
+
+[ext_resource type="Script" path="res://power_up.gd" id="1_018xm"]
+
+[node name="PowerUp" type="Area2D"]
+script = ExtResource("1_018xm")
+
+[node name="PowerUp" type="Sprite2D" parent="."]
+
+[node name="PowerUP" type="CollisionShape2D" parent="."]

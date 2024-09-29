@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf1xqu6b6j63h"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_6xunb"]
+[ext_resource type="Texture2D" uid="uid://1lgx4k3itivi" path="res://imagenes/1disparo.png" id="2_uen44"]
+[ext_resource type="AudioStream" uid="uid://hylvr8ysxx6q" path="res://imagenes/Musica/000207126_prev.mp3" id="3_8rjvb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpaxc"]
+radius = 7.0
+height = 40.0
+
+[node name="Bullet" type="Area2D" groups=["bullet"]]
+script = ExtResource("1_6xunb")
+
+[node name="bullet" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xpaxc")
+
+[node name="Bullet" type="Sprite2D" parent="."]
+position = Vector2(-9, 12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_uen44")
+
+[node name="000207126Prev" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8rjvb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqhcgap4vl4l0"]
+
+[ext_resource type="Script" path="res://menu_principal.gd" id="1_8o5y4"]
+[ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_vfk8l"]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8o5y4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 1196.0
+offset_bottom = 673.0
+texture = ExtResource("2_vfk8l")
+
+[node name="Inicio" type="Button" parent="."]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 259.0
+offset_right = 573.0
+offset_bottom = 290.0
+text = "Inicio"
+
+[node name="Opciones" type="Button" parent="."]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 301.0
+offset_right = 601.0
+offset_bottom = 332.0
+text = "Opciones"
+
+[node name="Salida" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.601
+anchor_bottom = 0.241
+offset_left = 523.0
+offset_top = 347.0
+offset_right = 540.96
+offset_bottom = 368.36
+text = "Salir"
+
+[connection signal="pressed" from="Inicio" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="Salida" to="." method="_on_salida_pressed"]

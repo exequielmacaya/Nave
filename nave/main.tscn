@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://bny12xiqyu838"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_idi61"]
+[ext_resource type="PackedScene" uid="uid://bfk0qbaosemu7" path="res://meteor.tscn" id="2_bpxct"]
+[ext_resource type="PackedScene" uid="uid://caipt7ed7vb46" path="res://player.tscn" id="2_j1ljw"]
+[ext_resource type="PackedScene" uid="uid://cjtu8dmink0ka" path="res://enemy_ship.tscn" id="3_80rjo"]
+[ext_resource type="PackedScene" uid="uid://cst52fq61xjuw" path="res://side_ship.tscn" id="6_pqkov"]
+[ext_resource type="PackedScene" uid="uid://ckd8rsr4ypxm1" path="res://Boss.tscn" id="6_rg3qd"]
+[ext_resource type="Texture2D" uid="uid://b33gkp83iw7bi" path="res://imagenes/fondo.jpg" id="6_w741o"]
+[ext_resource type="AudioStream" uid="uid://vyncar0cxg3k" path="res://imagenes/Musica/pop.mp3" id="7_bsxa0"]
+[ext_resource type="AudioStream" uid="uid://d2rwvfuxks2m" path="res://imagenes/Musica/Creedence_Acortado(Fringster.com).mp3" id="8_5waqk"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_idi61")
+player_scene = ExtResource("2_j1ljw")
+meteor_scene = ExtResource("2_bpxct")
+enemy_scene = ExtResource("3_80rjo")
+side_ship_scene = ExtResource("6_pqkov")
+boss_escene = ExtResource("6_rg3qd")
+
+[node name="Pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bsxa0")
+bus = &"Efecto"
+
+[node name="CreedenceAcortado(fringster_com)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5waqk")
+volume_db = -12.772
+autoplay = true
+
+[node name="MeteorTimer" type="Timer" parent="."]
+
+[node name="EnemyTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="SideShipTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="BossTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(100, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(579, 329)
+scale = Vector2(1.184, 0.67)
+texture = ExtResource("6_w741o")

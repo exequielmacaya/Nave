@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dka61ixh70mv3"]
+
+[ext_resource type="Script" path="res://splash.gd" id="1_x2qih"]
+[ext_resource type="Texture2D" uid="uid://vjb6je1tnlmp" path="res://imagenes/logo-UPSO.png" id="2_oskbm"]
+[ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_sgbyw"]
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_x2qih")
+
+[node name="TextureRectfondo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -4.0
+offset_right = 1162.0
+offset_bottom = 659.0
+texture = ExtResource("2_sgbyw")
+
+[node name="TextureRectLogo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 254.0
+offset_right = 755.0
+offset_bottom = 358.0
+texture = ExtResource("2_oskbm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 222.0
+offset_right = 812.0
+offset_bottom = 256.0
+text = "Juego creado por alumnos de"

@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://c57l3uthheo07"]
+
+[ext_resource type="Script" path="res://menu_opciones.gd" id="1_f2l6n"]
+[ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_x6oc3"]
+
+[node name="Menu_Opciones" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 424.0
+offset_top = 218.0
+offset_right = 464.0
+offset_bottom = 258.0
+script = ExtResource("1_f2l6n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -434.0
+offset_top = -226.0
+offset_right = 734.0
+offset_bottom = 437.0
+texture = ExtResource("2_x6oc3")
+
+[node name="volver" type="Button" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = -4.0
+offset_right = 370.0
+offset_bottom = 91.0
+text = "Volver"
+
+[node name="Configurar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 106.0
+offset_right = 375.0
+offset_bottom = 224.0
+text = "Configurar"
+
+[node name="Musica" type="HSlider" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+
+[node name="master" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -25.0
+offset_right = 368.0
+offset_bottom = -9.0
+
+[connection signal="pressed" from="volver" to="." method="_on_volver_pressed"]
+[connection signal="value_changed" from="master" to="." method="_on_master_value_changed"]

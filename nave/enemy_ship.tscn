@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjtu8dmink0ka"]
+
+[ext_resource type="Script" path="res://enemy_ship.gd" id="1_5kt8s"]
+[ext_resource type="Texture2D" uid="uid://dtqpsx458idlt" path="res://imagenes/enemigo1.png" id="2_5oqom"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mbwkf"]
+radius = 33.0
+height = 104.0
+
+[node name="EnemyShip" type="CharacterBody2D" groups=["EnemyShip"]]
+position = Vector2(142, 72)
+script = ExtResource("1_5kt8s")
+
+[node name="EnemyShip" type="Sprite2D" parent="."]
+position = Vector2(-2, 3)
+texture = ExtResource("2_5oqom")
+
+[node name="Enemyship" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 7)
+shape = SubResource("CapsuleShape2D_mbwkf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-7, 5)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

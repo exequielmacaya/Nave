@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://co0nxex1d8uvr"]
+
+[ext_resource type="Script" path="res://menu_pausa.gd" id="1_jldr5"]
+[ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_tn28k"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Menu_pausa" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jldr5")
+
+[node name="TextureRect" type="TextureRect" parent="Menu_pausa"]
+layout_mode = 0
+offset_left = -13.0
+offset_right = 1156.0
+offset_bottom = 656.0
+texture = ExtResource("2_tn28k")
+
+[node name="continuar" type="Button" parent="Menu_pausa"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 160.0
+offset_right = 803.0
+offset_bottom = 313.0
+text = "CONTINUAR"
+
+[node name="menuprin" type="Button" parent="Menu_pausa"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.1
+offset_left = 387.0
+offset_top = 325.0
+offset_right = 801.0
+offset_bottom = 467.0
+text = "MENÚ"
+
+[node name="salida" type="Button" parent="Menu_pausa"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.1
+offset_left = 387.0
+offset_top = 480.0
+offset_right = 799.0
+offset_bottom = 625.0
+text = "SALIR"
+
+[node name="menuopcio" type="Button" parent="Menu_pausa"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Menu_pausa/continuar" to="Menu_pausa" method="_on_continuar_pressed"]
+[connection signal="pressed" from="Menu_pausa/menuprin" to="Menu_pausa" method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="Menu_pausa/salida" to="Menu_pausa" method="_on_salida_pressed"]
+[connection signal="pressed" from="Menu_pausa/menuopcio" to="Menu_pausa" method="on_menu_opciones_pressed"]
