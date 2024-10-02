@@ -21,5 +21,6 @@ texture = ExtResource("2_uen44")
 
 [node name="000207126Prev" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8rjvb")
+bus = &"Efecto"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

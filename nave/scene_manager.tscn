@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvuehj10haerc"]
+
+[sub_resource type="GDScript" id="GDScript_pkbho"]
+script/source = "extends Node
+
+var current_scene: Node = null  # Almacenar la escena actual como un Node
+var previous_scene: Node = null  # Almacenar la escena previa como un Node
+
+func _ready():
+	# Cargar una escena inicial, como el menú principal
+	change_scene(\"res://menu_principal.tscn\")
+
+# Función para cambiar a una nueva escena
+func change_scene(scene_path: String):
+	if current_scene != null:
+		# Almacenar la escena previa
+		previous_scene = current_scene
+		current_scene.queue_free()
+
+	# Instanciar la nueva escena a partir de la PackedScene
+	var new_scene = load(scene_path).instantiate()  # Instanciar la PackedScene
+	current_scene = new_scene  # Guardar la escena actual
+	add_child(current_scene)  # Añadir la escena al árbol de nodos
+
+# Función para volver a la escena anterior
+func go_back():
+	if previous_scene != null:
+		var temp_scene = current_scene
+		current_scene = previous_scene
+		add_child(current_scene)
+		temp_scene.queue_free()
+		previous_scene = null
+"
+
+[node name="SceneManager" type="Node2D"]
+script = SubResource("GDScript_pkbho")

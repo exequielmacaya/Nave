@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #shader de roptura de los meteoritos
 @export var speed = 100
-@export var health = 2
+@export var health = 3
 
 signal  meteor_destroyed # señal de destruido
 
@@ -28,6 +28,10 @@ func take_damage():
 
 func explode():
 	emit_signal("meteor_destroyed","meteor") #emite señal cuando se destruye
+	var explosion = preload("res://explosion.tscn").instantiate()
+	get_parent().add_child(explosion)
+	explosion.global_position=self.global_position
+	#explosion.scale=Vector2(0.25,0.25)
 	queue_free()
 
 

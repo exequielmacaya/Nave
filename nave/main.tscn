@@ -26,8 +26,10 @@ bus = &"Efecto"
 stream = ExtResource("8_5waqk")
 volume_db = -12.772
 autoplay = true
+bus = &"Musica"
 
 [node name="MeteorTimer" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="EnemyTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -37,6 +39,15 @@ wait_time = 3.0
 
 [node name="BossTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="LevelTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="NextLevelLabel" type="Label" parent="."]
+offset_left = 396.0
+offset_top = 259.0
+offset_right = 800.0
+offset_bottom = 380.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

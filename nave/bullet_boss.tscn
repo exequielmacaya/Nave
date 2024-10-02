@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceeffws4naewb"]
+
+[ext_resource type="Script" path="res://bullet_boss.gd" id="1_gfdlo"]
+[ext_resource type="Texture2D" uid="uid://1lgx4k3itivi" path="res://imagenes/1disparo.png" id="1_x4wtg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1phbg"]
+radius = 15.0
+height = 50.0
+
+[node name="BulletBoss" type="Area2D" groups=["BulletBoss"]]
+rotation = 1.56991
+script = ExtResource("1_gfdlo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57407
+texture = ExtResource("1_x4wtg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1phbg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

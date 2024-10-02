@@ -1,5 +1,8 @@
 extends Control
 
+var previous_scene: PackedScene
+
+
 func _on_inicio_pressed() -> void: #inicio el juego
 	get_tree().change_scene_to_file("res://main.tscn")  
 
