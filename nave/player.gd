@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @export var speed = 200
 @export var bullet_scene = preload("res://Bullet.tscn")
-@export var shoot_cooldown = 0.5
+@export var shoot_cooldown = 0.4
 @export var health = 3
+@onready var shoot: AudioStreamPlayer2D = $Player/Shoot
 
 var shoot_timer = 0.5
 var double_shoot = false
@@ -45,11 +46,7 @@ func shoot_bullet():
 	bullet.direction = Vector2.UP # va pa arriba
 	get_parent().add_child(bullet) # aparece la bala
 	# para el doble tiro
-	if double_shoot:
-		var bullet2 = bullet_scene.instantiate()
-		bullet2.position = position + Vector2(20, 0)
-		bullet2.direction = Vector2.UP
-		get_parent().add_child(bullet2)
+	shoot.play()
 
 # Power-ups
 func activate_speed_boost():
@@ -65,6 +62,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		take_damage()
 
 func take_damage():
+	get_tree().get_nodes_in_group("barravidaplayer")[0].DisminuirVida(1)
 	health -= 1
 	if health <= 0:
 		explode()

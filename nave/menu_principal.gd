@@ -1,8 +1,8 @@
 extends Control
+@onready var menu: AudioStreamPlayer2D = $Menu
 
 func _on_inicio_pressed() -> void: #inicio el juego
 	get_tree().change_scene_to_file("res://main.tscn")  
-
 
 func _on_salida_pressed() -> void:
 	get_tree().quit()  # Cierro el juego
