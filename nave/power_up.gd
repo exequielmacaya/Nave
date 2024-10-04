@@ -1,5 +1,7 @@
 extends Area2D
 
+#Para futuras implementaciones
+
 func _on_PowerUp_body_entered(body):
 	if body.is_in_group("Player"):
 		apply_effect(body)

@@ -12,7 +12,7 @@ height = 129.59
 radius = 94.0
 height = 254.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_awkwm")
 

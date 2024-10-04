@@ -8,7 +8,7 @@ radius = 102.0
 height = 218.0
 
 [node name="Jefe" type="CharacterBody2D" groups=["Boss"]]
-position = Vector2(2, 114)
+position = Vector2(511, 110)
 script = ExtResource("1_1udiw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,6 +27,9 @@ scale = Vector2(2.575, 13.6)
 [node name="rebotaI" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-118, 20.5)
 scale = Vector2(1.4, 13.25)
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 3.0
 
 [connection signal="screen_exited" from="rebotaD" to="." method="_on_rebote"]
 [connection signal="screen_exited" from="rebotaI" to="." method="_on_rebote"]

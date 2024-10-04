@@ -1,6 +1,6 @@
 extends Control
 
-@export var scroll_speed = 100.0  # Velocidad de scroll en píxeles por segundo
+@export var scroll_speed = 50.0  # Velocidad de scroll en píxeles por segundo
 
 func _ready():
 	# Obtener el tamaño de la pantalla
@@ -9,7 +9,7 @@ func _ready():
 	# Obtener el tamaño del Label (para centrarlo)
 	var label_size = $Label.get_minimum_size()
 	
-	# Alinear el Label horizontalmente en el centro y colocarlo fuera de la pantalla en la parte inferior
+	# Alinea el Label horizontalmente en el centro y colocarlo fuera de la pantalla en la parte inferior
 	$Label.position = Vector2(
 		(screen_size.x - label_size.x) / 2,  # Centro horizontal
 		screen_size.y  # Parte inferior de la pantalla

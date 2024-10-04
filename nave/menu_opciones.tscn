@@ -37,18 +37,50 @@ offset_right = 375.0
 offset_bottom = 224.0
 text = "Configurar"
 
-[node name="Musica" type="HSlider" parent="."]
-visible = false
+[node name="musica" type="HSlider" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 16.0
+offset_left = 120.0
+offset_top = -95.0
+offset_right = 367.0
+offset_bottom = -79.0
 
 [node name="master" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 122.0
-offset_top = -25.0
-offset_right = 368.0
-offset_bottom = -9.0
+offset_left = 121.0
+offset_top = -148.0
+offset_right = 371.0
+offset_bottom = -132.0
+
+[node name="Efecto" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = -37.0
+offset_right = 370.0
+offset_bottom = -21.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = -122.0
+offset_right = 178.0
+offset_bottom = -99.0
+text = "Musica"
+
+[node name="LabelMaster" type="Label" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = -178.0
+offset_right = 178.0
+offset_bottom = -155.0
+text = "Master"
+
+[node name="Efecto2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = -68.0
+offset_right = 175.0
+offset_bottom = -45.0
+text = "Efecto"
 
 [node name="menu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_mn1vl")
@@ -56,4 +88,6 @@ autoplay = true
 playback_type = 1
 
 [connection signal="pressed" from="volver" to="." method="_on_volver_pressed"]
+[connection signal="value_changed" from="musica" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Efecto" to="." method="_on_efecto_value_changed"]

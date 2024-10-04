@@ -8,7 +8,7 @@ signal enemy_destroyed # señal de destruido
 
 func _physics_process(delta):
 	#position.x += speed * delta
-	#movimiento.y = speed  esta coon el codigo de abajo hace que sigan de largo pero te miren
+	#movimiento.y = speed  #esta coon el codigo de abajo hace que sigan de largo pero te miren
 	move_and_collide(movimiento * delta )
 	set_vector(get_node("../Player").global_position - global_position)
 	look_at(get_node("../Player").global_position)

@@ -19,6 +19,8 @@ extends Node2D
 @onready var enemy_timer : Timer = $EnemyTimer
 @onready var SideShip_timer : Timer = $SideShipTimer
 @onready var Boss_timer : Timer = $BossTimer
+@onready var next_level_label : Label = $NextLevelLabel  # Añadir un Label en la escena principal
+@onready var level_timer : Timer = $LevelTimer  # Un Timer para mostrar el mensaje del siguiente nivel
 
 
 #var is_paused = false
@@ -34,29 +36,45 @@ func _ready():
 	# Instancio la escena del jugador
 	var player = player_scene.instantiate()
 	# Posiciono al jugador (ajusta la posición)
-	player.position = Vector2(400, 400) 
+	var screen_size = get_viewport_rect().size
+	player.position = Vector2((screen_size.x ) / 2,  # Centro horizontal
+		screen_size.y)  # Parte inferior de la pantalla
 	# Añadimos al jugador a la escena principal
 	add_child(player)
 	pause_menu = preload("res://menu_pausa.tscn").instantiate()
 	add_child(pause_menu)
 	pause_menu.visible=false
 	
+	# Ocultar el Label del siguiente nivel inicialmente
+	next_level_label.visible = false
 	
 	# Conectar señales timeout a las funciones correspondientes
-
 	meteor_timer.timeout.connect(_on_MeteorTimer_timeout)
 	enemy_timer.timeout.connect(_on_EnemyTimer_timeout)
 	SideShip_timer.timeout.connect(_on_SideShipTimer_timeout)
 	Boss_timer.timeout.connect(_on_BossTimer_timeout)
+	level_timer.timeout.connect(_on_level_timer_timeout)  # Conectar el temporizador para el mensaje del siguiente nivel
+	
 
-	# Iniciar los timers
-	#meteor_timer.start()
-	#enemy_timer.start()
-	#SideShip_timer.start()
-	#Boss_timer.start()
+	# Iniciar los timers)
 	start_level (level)
 
 func start_level(level):
+	# Mostrar el cartel del siguiente nivel
+	next_level_label.text = "Nivel " + str(level) + ": ¡Prepárate!"
+	next_level_label.visible = true
+	level_timer.start(3.0)  # Muestra el cartel durante 3 segundos
+
+	# Pausa los timers de enemigos hasta que se oculta el mensaje
+	meteor_timer.stop()
+	enemy_timer.stop()
+	SideShip_timer.stop()
+	Boss_timer.stop()
+	
+func _on_level_timer_timeout():
+	# Oculta el cartel y comeinza el nivel
+	next_level_label.visible = false
+	
 	match level:
 		1:
 			meteor_timer.start()
@@ -75,14 +93,12 @@ func start_level(level):
 			meteor_timer.stop()
 			enemy_timer.stop()
 			SideShip_timer.stop()
-
 	#spawn 
 func _on_MeteorTimer_timeout():
 	var meteor = meteor_scene.instantiate()
 	meteor.position = Vector2(randf() * get_viewport_rect().size.x, 0)
 	add_child(meteor)
-
-	# Conectar la señal enemy_destroyed al Main
+	# Conecta la señal enemy_destroyed al Main
 	meteor.meteor_destroyed.connect(self._on_enemy_destroyed)
 
 
@@ -94,25 +110,30 @@ func _on_EnemyTimer_timeout():
 
 func _on_SideShipTimer_timeout():
 	var side_ship = side_ship_scene.instantiate()
-	side_ship.position = Vector2(randf() * get_viewport_rect().size.y,0)
+	side_ship.position = Vector2(0 if randi()%2==1 else get_viewport_rect().size.x,randf() * get_viewport_rect().size.y)
 	add_child(side_ship)
 	side_ship.enemy_destroyed.connect(self._on_enemy_destroyed)
 	
+	
 func _on_BossTimer_timeout():
-	var boss = boss_escene.instantiate()
-	boss.position = Vector2(randf()*get_viewport_rect().size.y,0)
-	add_child(boss)
-	boss.Boss_destroyed.connect(self._on_enemy_destroyed)
+# Verificar si ya hay un jefe en la escena
+	if not get_node_or_null("Boss"):  # Si no hay un nodo llamado "Boss"
+		var boss = boss_escene.instantiate()
+		boss.position.x = randf() * get_viewport_rect().size.x
+		#Vector2(randf() * get_viewport_rect().size.y, 0)
+		add_child(boss)
+		boss.Boss_destroyed.connect(self._on_enemy_destroyed)        
+# Detiene el temporizador para que no siga generando más jefes
+		Boss_timer.stop()
+
 
 func _on_enemy_destroyed(enemy_type: String):
 	match enemy_type:
 		"meteor":
 			meteor_count +=1
-			print(meteor_count)
 			$Pop.play()
 		"enemy":
 			enemy_count +=1
-			print(enemy_count)
 		"Boss":
 			get_tree().change_scene_to_file("res://creditos.tscn")
 	total_kills +=1
