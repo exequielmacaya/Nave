@@ -12,6 +12,8 @@ extends Node2D
 
 
 
+
+
 # Usamos 'onready' para obtener los nodos de Timer
 @onready var meteor_timer : Timer = $MeteorTimer
 @onready var enemy_timer : Timer = $EnemyTimer

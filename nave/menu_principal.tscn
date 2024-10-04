@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqhcgap4vl4l0"]
+[gd_scene load_steps=4 format=3 uid="uid://bqhcgap4vl4l0"]
 
 [ext_resource type="Script" path="res://menu_principal.gd" id="1_8o5y4"]
 [ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_vfk8l"]
+[ext_resource type="AudioStream" uid="uid://1rsykv3l7mbv" path="res://imagenes/Musica/Menú.mp3" id="3_8u6ma"]
 
 [node name="MenuPrincipal" type="Control"]
 layout_mode = 3
@@ -44,6 +45,11 @@ offset_top = 347.0
 offset_right = 540.96
 offset_bottom = 368.36
 text = "Salir"
+
+[node name="Menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8u6ma")
+autoplay = true
+playback_type = 1
 
 [connection signal="pressed" from="Inicio" to="." method="_on_inicio_pressed"]
 [connection signal="pressed" from="Opciones" to="." method="_on_opciones_pressed"]

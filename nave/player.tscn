@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://caipt7ed7vb46"]
+[gd_scene load_steps=6 format=3 uid="uid://caipt7ed7vb46"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_awkwm"]
 [ext_resource type="Texture2D" uid="uid://8mh2j8adg05k" path="res://imagenes/drag.png" id="2_a20gs"]
+[ext_resource type="AudioStream" uid="uid://0inubxamtl7l" path="res://imagenes/Musica/retrolaser.mp3" id="3_8604i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6huru"]
 radius = 55.72
@@ -17,6 +18,9 @@ script = ExtResource("1_awkwm")
 
 [node name="Player" type="Sprite2D" parent="."]
 texture = ExtResource("2_a20gs")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("3_8604i")
 
 [node name="Player2" type="CollisionShape2D" parent="."]
 visible = false

@@ -3,6 +3,8 @@ extends Control
 @onready var music_volume_slider = $MusicVolumeSlider
 @onready var master_volume_slider = $MasterVolumeSlider
 @onready var label_reasignar = $Label  # Label para mostrar la tecla que se va a reasignar
+@onready var menu: AudioStreamPlayer2D = $menu
+
 
 var esperando_tecla = false
 var accion_a_reasignar = ""
@@ -13,6 +15,7 @@ func _ready():
 	var sonido_master= AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
 	var slider_master=lerp(0,100,(sonido_master+80)/80)
 	$master.value= slider_master
+	
 
 
 func _on_master_value_changed(value: float) -> void:
