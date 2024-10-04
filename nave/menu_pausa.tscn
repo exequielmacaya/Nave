@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://co0nxex1d8uvr"]
+[gd_scene load_steps=4 format=3 uid="uid://co0nxex1d8uvr"]
 
 [ext_resource type="Script" path="res://menu_pausa.gd" id="1_jldr5"]
 [ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_tn28k"]
+[ext_resource type="AudioStream" uid="uid://dxcs8hixip0np" path="res://imagenes/Musica/star.mp3" id="3_rb36q"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -52,6 +53,11 @@ text = "SALIR"
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="pausa" type="AudioStreamPlayer2D" parent="Menu_pausa"]
+stream = ExtResource("3_rb36q")
+autoplay = true
+playback_type = 1
 
 [connection signal="pressed" from="Menu_pausa/continuar" to="Menu_pausa" method="_on_continuar_pressed"]
 [connection signal="pressed" from="Menu_pausa/menuprin" to="Menu_pausa" method="_on_menu_principal_pressed"]

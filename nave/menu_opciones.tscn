@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c57l3uthheo07"]
+[gd_scene load_steps=4 format=3 uid="uid://c57l3uthheo07"]
 
 [ext_resource type="Script" path="res://menu_opciones.gd" id="1_f2l6n"]
 [ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_x6oc3"]
+[ext_resource type="AudioStream" uid="uid://1rsykv3l7mbv" path="res://imagenes/Musica/Menú.mp3" id="3_mn1vl"]
 
 [node name="Menu_Opciones" type="Control"]
 layout_mode = 3
@@ -80,6 +81,11 @@ offset_top = -68.0
 offset_right = 175.0
 offset_bottom = -45.0
 text = "Efecto"
+
+[node name="menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mn1vl")
+autoplay = true
+playback_type = 1
 
 [connection signal="pressed" from="volver" to="." method="_on_volver_pressed"]
 [connection signal="value_changed" from="musica" to="." method="_on_music_value_changed"]

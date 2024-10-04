@@ -17,9 +17,19 @@ func _ready():
 	
 	# Texto de créditos
 	$Label.text = """Créditos:
-	Desarrollador: Pirititiu
-	Música: No Copi Rigt
-	Agradecimientos: Al clistian que carreo
+	Desarrolladores: 
+		- Macaya, Exequiel
+		- 
+		- Fernández, Lucas Damián
+		- Agustina
+		
+	Equipo Docente:
+		- Sastre Arriola, Néstor Ubaldo
+		- Pintos, Micaela Luján
+		
+	Música:
+		
+
 	"""
 
 func _process(delta):

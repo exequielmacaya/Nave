@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bny12xiqyu838"]
+[gd_scene load_steps=14 format=3 uid="uid://bny12xiqyu838"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_idi61"]
 [ext_resource type="PackedScene" uid="uid://bfk0qbaosemu7" path="res://meteor.tscn" id="2_bpxct"]
@@ -7,8 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://cst52fq61xjuw" path="res://side_ship.tscn" id="6_pqkov"]
 [ext_resource type="PackedScene" uid="uid://ckd8rsr4ypxm1" path="res://Boss.tscn" id="6_rg3qd"]
 [ext_resource type="Texture2D" uid="uid://b33gkp83iw7bi" path="res://imagenes/fondo.jpg" id="6_w741o"]
+[ext_resource type="Script" path="res://barra_de_vida.gd" id="7_54g6p"]
 [ext_resource type="AudioStream" uid="uid://vyncar0cxg3k" path="res://imagenes/Musica/pop.mp3" id="7_bsxa0"]
 [ext_resource type="AudioStream" uid="uid://d2rwvfuxks2m" path="res://imagenes/Musica/Creedence_Acortado(Fringster.com).mp3" id="8_5waqk"]
+[ext_resource type="AudioStream" uid="uid://0inubxamtl7l" path="res://imagenes/Musica/retrolaser.mp3" id="11_esyg1"]
+
+[sub_resource type="Theme" id="Theme_1r17t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ty766"]
+bg_color = Color(0.237934, 0.658101, 0.779287, 1)
+draw_center = false
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_idi61")
@@ -17,6 +29,20 @@ meteor_scene = ExtResource("2_bpxct")
 enemy_scene = ExtResource("3_80rjo")
 side_ship_scene = ExtResource("6_pqkov")
 boss_escene = ExtResource("6_rg3qd")
+
+[node name="BarraDeVida" type="ProgressBar" parent="." groups=["barravidaplayer"]]
+offset_left = 969.0
+offset_top = 586.0
+offset_right = 1149.0
+offset_bottom = 609.0
+theme = SubResource("Theme_1r17t")
+theme_override_colors/font_color = Color(0.531347, 0.474083, 0.234215, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_ty766")
+max_value = 3.0
+step = 1.0
+value = 3.0
+show_percentage = false
+script = ExtResource("7_54g6p")
 
 [node name="Pop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bsxa0")
@@ -58,3 +84,14 @@ motion_scale = Vector2(100, 100)
 position = Vector2(579, 329)
 scale = Vector2(1.184, 0.67)
 texture = ExtResource("6_w741o")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ParallaxBackground/ParallaxLayer/Sprite2D"]
+offset_left = 7.60135
+offset_top = 623.881
+offset_right = 122.601
+offset_bottom = 663.881
+max_value = 3.0
+page = 3.0
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_esyg1")
