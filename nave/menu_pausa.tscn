@@ -1,65 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://co0nxex1d8uvr"]
+[gd_scene load_steps=5 format=3 uid="uid://co0nxex1d8uvr"]
 
 [ext_resource type="Script" path="res://menu_pausa.gd" id="1_jldr5"]
+[ext_resource type="PackedScene" uid="uid://c57l3uthheo07" path="res://menu_opciones.tscn" id="2_3vu0p"]
 [ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_tn28k"]
 [ext_resource type="AudioStream" uid="uid://dxcs8hixip0np" path="res://imagenes/Musica/star.mp3" id="3_rb36q"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 100
 
-[node name="Menu_pausa" type="Control" parent="."]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_jldr5")
-
-[node name="TextureRect" type="TextureRect" parent="Menu_pausa"]
-layout_mode = 0
+[node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -13.0
 offset_right = 1156.0
 offset_bottom = 656.0
 texture = ExtResource("2_tn28k")
 
+[node name="menuopciones" parent="." instance=ExtResource("2_3vu0p")]
+visible = false
+
+[node name="Menu_pausa" type="VBoxContainer" parent="." groups=["Menu_pausa"]]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = -87.5
+offset_right = 206.5
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jldr5")
+
 [node name="continuar" type="Button" parent="Menu_pausa"]
-layout_mode = 0
-offset_left = 382.0
-offset_top = 160.0
-offset_right = 803.0
-offset_bottom = 313.0
+layout_mode = 2
 text = "CONTINUAR"
 
 [node name="menuprin" type="Button" parent="Menu_pausa"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.1
-offset_left = 387.0
-offset_top = 325.0
-offset_right = 801.0
-offset_bottom = 467.0
+layout_mode = 2
 text = "MENÚ"
 
-[node name="salida" type="Button" parent="Menu_pausa"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.1
-offset_left = 387.0
-offset_top = 480.0
-offset_right = 799.0
-offset_bottom = 625.0
-text = "SALIR"
+[node name="opciones" type="Button" parent="Menu_pausa"]
+layout_mode = 2
+text = "Opciones"
 
-[node name="menuopcio" type="Button" parent="Menu_pausa"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="salida" type="Button" parent="Menu_pausa"]
+layout_mode = 2
+text = "SALIR"
 
 [node name="pausa" type="AudioStreamPlayer2D" parent="Menu_pausa"]
 stream = ExtResource("3_rb36q")
-autoplay = true
+bus = &"Musica"
 playback_type = 1
 
 [connection signal="pressed" from="Menu_pausa/continuar" to="Menu_pausa" method="_on_continuar_pressed"]
 [connection signal="pressed" from="Menu_pausa/menuprin" to="Menu_pausa" method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="Menu_pausa/opciones" to="Menu_pausa" method="_on_opciones_pressed"]
 [connection signal="pressed" from="Menu_pausa/salida" to="Menu_pausa" method="_on_salida_pressed"]
-[connection signal="pressed" from="Menu_pausa/menuopcio" to="Menu_pausa" method="on_menu_opciones_pressed"]

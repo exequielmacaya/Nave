@@ -1,0 +1,62 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1728078514
+animation_player.tscn::PackedScene::1127708772221488404::1728002919::0::1::::<><>::uid://deittipas0ain::::res://imagenes/explosion.png
+barra_de_vida.gd::GDScript::-1::1728002919::0::1::::<>ProgressBar<>::
+boss.gd::GDScript::-1::1728002919::0::1::::<>CharacterBody2D<>::
+Boss.tscn::PackedScene::5482957929318675430::1728002919::0::1::::<><>::res://boss.gd<>uid://cjpvftkvpxf74::::res://imagenes/jefe.png
+bullet.gd::GDScript::-1::1728004878::0::1::::<>Area2D<>::
+bullet.tscn::PackedScene::2792464885468116307::1728078251::0::1::::<><>::res://bullet.gd<>uid://1lgx4k3itivi::::res://imagenes/1disparo.png<>uid://hylvr8ysxx6q::::res://imagenes/Musica/000207126_prev.mp3
+bullet_boss.gd::GDScript::-1::1728002919::0::1::::<>Area2D<>::
+bullet_boss.tscn::PackedScene::5062167951543115245::1728002919::0::1::::<><>::res://bullet_boss.gd<>uid://1lgx4k3itivi::::res://imagenes/1disparo.png
+creditos.gd::GDScript::-1::1728003599::0::1::::<>Control<>::
+creditos.tscn::PackedScene::1187008284274009878::1728078251::0::1::::<><>::res://creditos.gd
+default_bus_layout.tres::AudioBusLayout::1540662572237926109::1728002919::0::1::::<><>::
+enemy_ship.gd::GDScript::-1::1728004980::0::1::::<>CharacterBody2D<>::
+enemy_ship.tscn::PackedScene::5445037584998801624::1728078251::0::1::::<><>::res://enemy_ship.gd<>uid://dtqpsx458idlt::::res://imagenes/enemigo1.png
+explosion.gd::GDScript::-1::1728002919::0::1::::<>Sprite2D<>::
+explosion.tscn::PackedScene::3881392044148089622::1728002919::0::1::::<><>::uid://deittipas0ain::::res://imagenes/explosion.png<>res://explosion.gd
+icon.svg::CompressedTexture2D::5621054811155982089::1728002919::1728002974::1::::<><>::
+main.gd::GDScript::-1::1728005856::0::1::::<>Node2D<>::
+main.tscn::PackedScene::3350048796487669629::1728078251::0::1::::<><>::res://main.gd<>uid://bfk0qbaosemu7::::res://meteor.tscn<>uid://caipt7ed7vb46::::res://player.tscn<>uid://cjtu8dmink0ka::::res://enemy_ship.tscn<>uid://cst52fq61xjuw::::res://side_ship.tscn<>uid://ckd8rsr4ypxm1::::res://Boss.tscn<>uid://b33gkp83iw7bi::::res://imagenes/fondo.jpg<>res://barra_de_vida.gd<>uid://vyncar0cxg3k::::res://imagenes/Musica/pop.mp3<>uid://d2rwvfuxks2m::::res://imagenes/Musica/Creedence_Acortado(Fringster.com).mp3<>uid://0inubxamtl7l::::res://imagenes/Musica/retrolaser.mp3
+menu_derrota.gd::GDScript::-1::1728002919::0::1::::<>Control<>::
+menu_derrota.tscn::PackedScene::3038395167719257700::1728002919::0::1::::<><>::res://menu_derrota.gd<>uid://c23k26exd3qom::::res://imagenes/fonfo menu.webp
+menu_opciones.gd::GDScript::-1::1728078243::0::1::::<>Control<>::
+menu_opciones.tscn::PackedScene::6945285733952718042::1728078251::0::1::::<><>::res://menu_opciones.gd<>uid://c23k26exd3qom::::res://imagenes/fonfo menu.webp<>uid://1rsykv3l7mbv::::res://imagenes/Musica/Menú.mp3
+menu_pausa.gd::GDScript::-1::1728005632::0::1::::<>Control<>::
+menu_pausa.tscn::PackedScene::5807925263146479587::1728078251::0::1::::<><>::res://menu_pausa.gd<>uid://c23k26exd3qom::::res://imagenes/fonfo menu.webp<>uid://dxcs8hixip0np::::res://imagenes/Musica/star.mp3
+menu_principal.gd::GDScript::-1::1728005186::0::1::::<>Control<>::
+menu_principal.tscn::PackedScene::3524024999447222795::1728078251::0::1::::<><>::res://menu_principal.gd<>uid://c23k26exd3qom::::res://imagenes/fonfo menu.webp<>uid://1rsykv3l7mbv::::res://imagenes/Musica/Menú.mp3
+meteor.gd::GDScript::-1::1728002919::0::1::::<>CharacterBody2D<>::
+meteor.tscn::PackedScene::2759555230129172600::1728002919::0::1::::<><>::res://meteor.gd<>uid://cixfhwnusg45v::::res://imagenes/cometa1.png
+player.gd::GDScript::-1::1728002919::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::4790302761500689157::1728078251::0::1::::<><>::res://player.gd<>uid://8mh2j8adg05k::::res://imagenes/drag.png<>uid://0inubxamtl7l::::res://imagenes/Musica/retrolaser.mp3
+power_up.gd::GDScript::-1::1728002919::0::1::::<>Area2D<>::
+power_up.tscn::PackedScene::1245229242210652137::1728002919::0::1::::<><>::res://power_up.gd
+scene_manager.tscn::PackedScene::6288350521414789092::1728002919::0::1::::<><>::
+side_ship.gd::GDScript::-1::1728002919::0::1::::<>CharacterBody2D<>::
+side_ship.tscn::PackedScene::6077333745194126234::1728002919::0::1::::<><>::res://side_ship.gd<>uid://dccgxxsrv8qhf::::res://imagenes/nave2.png
+splash.gd::GDScript::-1::1728002919::0::1::::<>Control<>::
+splash.tscn::PackedScene::7863079600956025342::1728078251::0::1::::<><>::res://splash.gd<>uid://vjb6je1tnlmp::::res://imagenes/logo-UPSO.png<>uid://c23k26exd3qom::::res://imagenes/fonfo menu.webp
+::res://imagenes/::1728002976
+1disparo.png::CompressedTexture2D::1848025005008748554::1728002919::1728002974::1::::<><>::
+cometa1.png::CompressedTexture2D::5382150066884196117::1728002919::1728002974::1::::<><>::
+disparo1.png::CompressedTexture2D::4106634144148134627::1728002919::1728002974::1::::<><>::
+drag.png::CompressedTexture2D::2341478132181555210::1728002919::1728002974::1::::<><>::
+dragon.png::CompressedTexture2D::3363849988735000892::1728002919::1728002974::1::::<><>::
+enemigo1.png::CompressedTexture2D::8526824277692521445::1728002919::1728002974::1::::<><>::
+explosion.png::CompressedTexture2D::7457720443994571077::1728002919::1728002976::1::::<><>::
+fondo.jpg::CompressedTexture2D::4409893882679911450::1728002919::1728002975::1::::<><>::
+fonfo menu.webp::CompressedTexture2D::6726399744543062424::1728002919::1728002974::1::::<><>::
+gratis-png-sprite-nave-espacial-juego-sprite.png::CompressedTexture2D::3998218823660112506::1728002919::1728002974::1::::<><>::
+jefe.png::CompressedTexture2D::5436791626623807161::1728002919::1728002974::1::::<><>::
+logo-UPSO.png::CompressedTexture2D::1492661672885640747::1728002919::1728002974::1::::<><>::
+nave2.png::CompressedTexture2D::7304175105725212715::1728002919::1728002974::1::::<><>::
+naves con disparos.png::CompressedTexture2D::7218538583902857622::1728002919::1728002974::1::::<><>::
+::res://imagenes/Musica/::1728002974
+000207126_prev.mp3::AudioStreamMP3::541573305147029282::1728002919::1728002974::1::::<><>::
+Creedence_Acortado(Fringster.com).mp3::AudioStreamMP3::267377318270882794::1728002919::1728002974::1::::<><>::
+Creedence_Clearwater_Revival_Fortunate_Son_Ringtone_(by Fringster.com).mp3::AudioStreamMP3::9218657444363076237::1728002919::1728002974::1::::<><>::
+Menú.mp3::AudioStreamMP3::1861140680293929431::1728002919::1728002974::1::::<><>::
+pop.mp3::AudioStreamMP3::1524303702391033746::1728002919::1728002974::1::::<><>::
+retrolaser.mp3::AudioStreamMP3::1772061237837998095::1728002919::1728002974::1::::<><>::
+star.mp3::AudioStreamMP3::8778886428409036165::1728002919::1728002974::1::::<><>::

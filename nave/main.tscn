@@ -75,6 +75,17 @@ offset_top = 259.0
 offset_right = 800.0
 offset_bottom = 380.0
 
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 567.0
+offset_right = 79.0
+offset_bottom = 590.0
+grow_vertical = 0
+text = "0"
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]

@@ -21,6 +21,7 @@ texture = ExtResource("2_a20gs")
 
 [node name="Shoot" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("3_8604i")
+bus = &"Efecto"
 
 [node name="Player2" type="CollisionShape2D" parent="."]
 visible = false

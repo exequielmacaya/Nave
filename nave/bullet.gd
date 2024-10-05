@@ -13,7 +13,11 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Meteor") or body.is_in_group("EnemyShip") or body.is_in_group("sideShip") or body.is_in_group("Boss"):
-		body.take_damage()
-		queue_free()
-	
+	if self.is_in_group("bullet"):
+		if body.is_in_group("Meteor") or body.is_in_group("EnemyShip") or body.is_in_group("sideShip") or body.is_in_group("Boss"):
+			body.take_damage()
+			queue_free()
+	elif self.is_in_group("Bullet_Enemy"):
+		if body.is_in_group("Meteor") or body.is_in_group("Player") or body.is_in_group("sideShip") or body.is_in_group("Boss"):
+			body.take_damage()
+			queue_free()

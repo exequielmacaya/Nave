@@ -20,6 +20,7 @@ extends Node2D
 @onready var SideShip_timer : Timer = $SideShipTimer
 @onready var Boss_timer : Timer = $BossTimer
 @onready var next_level_label : Label = $NextLevelLabel  # Añadir un Label en la escena principal
+@onready var Score_Label : Label = $ScoreLabel
 @onready var level_timer : Timer = $LevelTimer  # Un Timer para mostrar el mensaje del siguiente nivel
 
 
@@ -30,6 +31,7 @@ var enemy_count = 0
 var level = 1
 var total_kills = 0
 var kills_to_next_level = 10
+var score = 0
 
 func _ready():
 	
@@ -70,6 +72,11 @@ func start_level(level):
 	enemy_timer.stop()
 	SideShip_timer.stop()
 	Boss_timer.stop()
+
+func score_count():
+	score = (meteor_count * 10 )+ (enemy_count*25)
+	Score_Label.text = str(score)
+
 	
 func _on_level_timer_timeout():
 	# Oculta el cartel y comeinza el nivel
@@ -141,6 +148,7 @@ func _on_enemy_destroyed(enemy_type: String):
 		level+=1
 		kills_to_next_level +=10
 		start_level(level)
+	score_count()
 	
 
 func _process(delta):
@@ -152,10 +160,12 @@ func _process(delta):
 
 func pause_game():
 	pause_menu.visible=true
+	pause_menu.get_node("Menu_pausa/pausa").play()
 	get_tree().paused = true  # Pausa el árbol de nodos
 
 
 func unpause_game():
 	pause_menu.visible=false
+	pause_menu.get_node("Menu_pausa/pausa").stream_paused=true
 	get_tree().paused = false  # Reanuda el juego
 	

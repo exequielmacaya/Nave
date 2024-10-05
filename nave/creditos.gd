@@ -19,7 +19,7 @@ func _ready():
 	$Label.text = """Créditos:
 	Desarrolladores: 
 		- Macaya, Exequiel
-		- 
+		- Sanhueza, Marianela
 		- Fernández, Lucas Damián
 		- Agustina
 		
@@ -28,6 +28,10 @@ func _ready():
 		- Pintos, Micaela Luján
 		
 	Música:
+		-Creedence Clearwater Revival: Fortunate son: Version tiktok por Fringster.com
+		-efectos de sonidos: Fringter.com
+	Imagenes
+		-pngwing.com
 		
 
 	"""

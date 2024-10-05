@@ -1,0 +1,17 @@
+res://splash.tscn
+res://creditos.tscn
+res://main.tscn
+res://menu_opciones.tscn
+res://menu_principal.tscn
+res://player.tscn
+res://enemy_ship.tscn
+res://bullet.tscn
+res://menu_pausa.tscn
+res://menu_derrota.tscn
+res://menu_pausa.gd
+res://default_bus_layout.tres
+res://menu_opciones.gd
+res://main.gd
+res://meteor.tscn
+res://enemy_ship.gd
+res://creditos.gd

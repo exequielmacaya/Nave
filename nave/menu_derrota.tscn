@@ -3,36 +3,35 @@
 [ext_resource type="Script" path="res://menu_derrota.gd" id="1_w7ojg"]
 [ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_8tmih"]
 
-[node name="MenuDerrota" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_w7ojg")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="TextureRect" type="TextureRect"]
 offset_left = -14.0
 offset_top = -4.0
 offset_right = 1161.0
 offset_bottom = 664.0
 texture = ExtResource("2_8tmih")
 
-[node name="reiniciar" type="Button" parent="."]
-layout_mode = 0
-offset_left = 482.0
-offset_top = 269.0
-offset_right = 657.0
-offset_bottom = 307.0
+[node name="MenuDerrota" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = -87.5
+offset_right = 206.5
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w7ojg")
+
+[node name="reiniciar" type="Button" parent="MenuDerrota"]
+layout_mode = 2
 text = "REINICIAR"
 
-[node name="salir" type="Button" parent="."]
-layout_mode = 0
-offset_left = 483.0
-offset_top = 312.0
-offset_right = 658.0
-offset_bottom = 347.0
+[node name="salir" type="Button" parent="MenuDerrota"]
+layout_mode = 2
 text = "SALIR"
 
-[connection signal="pressed" from="reiniciar" to="." method="_on_reiniciar_pressed"]
-[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="MenuDerrota/reiniciar" to="MenuDerrota" method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="MenuDerrota/salir" to="MenuDerrota" method="_on_salir_pressed"]

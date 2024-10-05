@@ -4,90 +4,63 @@
 [ext_resource type="Texture2D" uid="uid://c23k26exd3qom" path="res://imagenes/fonfo menu.webp" id="2_x6oc3"]
 [ext_resource type="AudioStream" uid="uid://1rsykv3l7mbv" path="res://imagenes/Musica/Menú.mp3" id="3_mn1vl"]
 
-[node name="Menu_Opciones" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 424.0
-offset_top = 218.0
-offset_right = 464.0
-offset_bottom = 258.0
+[node name="Menu_Opciones" type="TextureRect"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x6oc3")
+metadata/_edit_lock_ = true
+
+[node name="Menu_Opciones" type="VBoxContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = -87.5
+offset_right = 206.5
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_f2l6n")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -434.0
-offset_top = -226.0
-offset_right = 734.0
-offset_bottom = 437.0
-texture = ExtResource("2_x6oc3")
-
-[node name="volver" type="Button" parent="."]
-layout_mode = 0
-offset_left = 121.0
-offset_top = -4.0
-offset_right = 370.0
-offset_bottom = 91.0
-text = "Volver"
-
-[node name="Configurar" type="Button" parent="."]
-layout_mode = 0
-offset_left = 118.0
-offset_top = 106.0
-offset_right = 375.0
-offset_bottom = 224.0
-text = "Configurar"
-
-[node name="musica" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -95.0
-offset_right = 367.0
-offset_bottom = -79.0
-
-[node name="master" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 121.0
-offset_top = -148.0
-offset_right = 371.0
-offset_bottom = -132.0
-
-[node name="Efecto" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 124.0
-offset_top = -37.0
-offset_right = 370.0
-offset_bottom = -21.0
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 123.0
-offset_top = -122.0
-offset_right = 178.0
-offset_bottom = -99.0
-text = "Musica"
-
-[node name="LabelMaster" type="Label" parent="."]
-layout_mode = 0
-offset_left = 123.0
-offset_top = -178.0
-offset_right = 178.0
-offset_bottom = -155.0
+[node name="LabelMaster" type="Label" parent="Menu_Opciones"]
+layout_mode = 2
 text = "Master"
 
-[node name="Efecto2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 127.0
-offset_top = -68.0
-offset_right = 175.0
-offset_bottom = -45.0
+[node name="master" type="HSlider" parent="Menu_Opciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu_Opciones"]
+layout_mode = 2
+text = "Musica"
+
+[node name="musica" type="HSlider" parent="Menu_Opciones"]
+layout_mode = 2
+
+[node name="Efecto2" type="Label" parent="Menu_Opciones"]
+layout_mode = 2
 text = "Efecto"
 
-[node name="menu" type="AudioStreamPlayer2D" parent="."]
+[node name="Efecto" type="HSlider" parent="Menu_Opciones"]
+layout_mode = 2
+
+[node name="volver" type="Button" parent="Menu_Opciones"]
+layout_mode = 2
+text = "Volver"
+
+[node name="menu" type="AudioStreamPlayer2D" parent="Menu_Opciones"]
 stream = ExtResource("3_mn1vl")
-autoplay = true
+bus = &"Musica"
 playback_type = 1
 
-[connection signal="pressed" from="volver" to="." method="_on_volver_pressed"]
-[connection signal="value_changed" from="musica" to="." method="_on_music_value_changed"]
-[connection signal="value_changed" from="master" to="." method="_on_master_value_changed"]
-[connection signal="value_changed" from="Efecto" to="." method="_on_efecto_value_changed"]
+[connection signal="value_changed" from="Menu_Opciones/master" to="Menu_Opciones" method="_on_master_value_changed"]
+[connection signal="value_changed" from="Menu_Opciones/musica" to="Menu_Opciones" method="_on_music_value_changed"]
+[connection signal="value_changed" from="Menu_Opciones/Efecto" to="Menu_Opciones" method="_on_efecto_value_changed"]
+[connection signal="pressed" from="Menu_Opciones/volver" to="Menu_Opciones" method="_on_volver_pressed"]
